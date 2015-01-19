@@ -1,0 +1,10 @@
+.post-box {
+    position: fixed;
+    top: 90px;
+    left: 64%;
+}
+div {
+    word-wrap: break-word;
+    word-break: normal;
+}
+
