@@ -11,6 +11,13 @@ createTableCmd='''CREATE TEBLE if not exists message ( \
     content char(255), \
     PRIMARY KEY(id) \
 )'''
+'''CREATE TABLE `messages` (\
+        `id`  int(6) NOT NULL AUTO_INCREMENT, \
+        `name` varchar(50) NOT NULL, \
+        `time` varchar(50) NOT NULL, \
+        `content` varchar(255), \
+        PRIMARY KEY(`id`) \
+        ) CHARSET=utf8;'''
 
 insertCmd='''insert into messages(name, time, content) \
         values('%s', '%s', '%s')'''
