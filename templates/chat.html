@@ -7,7 +7,7 @@
 <ul class="list-group">
 {% for item in all_msg %}
 <li class="list-group-item">
-<h6 class="list-group-item-heading">@{{item.name}} {{item.time}}</h4>
+<h6 class="list-group-item-heading">@{{item.name.decode('utf8')}} {{item.time}}</h4>
 <p class="list-group-item-text">{{item.content.decode('utf8')}}</p>
 </li>
 {% endfor %}

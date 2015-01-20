@@ -4,14 +4,7 @@
 import MySQLdb
 import MySQLdb.cursors
 
-createTableCmd='''CREATE TEBLE if not exists message ( \
-    id  int(6) NOT NULL AUTO_INCREASEMENT, \
-    name char(50) NOT NULL, \
-    time char(50) NOT NULL, \
-    content char(255), \
-    PRIMARY KEY(id) \
-)'''
-'''CREATE TABLE `messages` (\
+createTableCmd='''CREATE TABLE `messages` (\
         `id`  int(6) NOT NULL AUTO_INCREMENT, \
         `name` varchar(50) NOT NULL, \
         `time` varchar(50) NOT NULL, \
