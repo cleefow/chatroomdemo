@@ -27,6 +27,7 @@ class chatDb():
                 user = 'test',
                 passwd = 'test',
                 port = 3306,
+                charset = 'utf8',
                 cursorclass = MySQLdb.cursors.DictCursor)
         print self.conn
         self.cur = self.conn.cursor()

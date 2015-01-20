@@ -7,8 +7,8 @@
 <ul class="list-group">
 {% for item in all_msg %}
 <li class="list-group-item">
-<h6 class="list-group-item-heading">@{{item.name.decode('utf8')}} {{item.time}}</h4>
-<p class="list-group-item-text">{{item.content.decode('utf8')}}</p>
+<h6 class="list-group-item-heading">@{{item.name}} {{item.time}}</h4>
+<p class="list-group-item-text">{{item.content}}</p>
 </li>
 {% endfor %}
 </ul>
@@ -17,15 +17,16 @@
 <div class="col-md-4 post-box">
 <script>
 $(document).ready(function(){
-    $('#username').val($.cookie('username'))
-{# comment out
+    $('#username').val(decodeURIComponent($.cookie('username')))
     $("#submitMsg").submit(function(){
-        alert($("#username").val());
+        $.cookie('username', encodeURIComponent($("#username").val()));
     });
-#}
 });
 </script>
-<div class="alert alert-warning">Currently English Only</div>
+<div class="alert alert-warning">
+<a class="close" data-dismiss="alert">×</a>
+<strong>NOTE: </strong>en/zh_CN is supported now.
+</div>
 <form id="submitMsg" action="/submit" method="post" role="form">
 <div class="form-group">
     <textarea name="content" class="form-control" placeholder="input content" rows="5"></textarea>

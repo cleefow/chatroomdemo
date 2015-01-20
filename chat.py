@@ -16,8 +16,6 @@ languages = 'en cn'.split()
 
 bottle.TEMPLATE_PATH.append(template_path)
 
-# all_msg = []
-
 @app.get('/')
 def index():
     bottle.redirect('/chat')
@@ -39,11 +37,13 @@ def submit_msg():
     username = bottle.request.forms.get('username')
     content = bottle.request.forms.get('content')
     curtime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-    msg_item = {'name':username, 'content': content, 'time': curtime}
-    # all_msg.append(msg_item)
-    #print all_msg
+    msg_item = {
+            'name':username.decode('utf8'), 
+            'content': content.decode('utf8'), 
+            'time': curtime }
+    # print msg_item
     chatMsgs.insertMsg(msg_item)
-    bottle.response.set_cookie('username', username)
+    # bottle.response.set_cookie('username', username)
     bottle.redirect('/chat')
 
 
